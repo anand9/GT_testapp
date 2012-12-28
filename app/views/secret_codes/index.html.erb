@@ -1,0 +1,26 @@
+<h1>Secret Codes</h1>
+
+<table  class="table table-striped">
+  <tr>
+    <th>Code</th>
+    <th>User</th>
+    <th></th>
+
+  </tr>
+
+<% @secret_codes.each do |secret_code| %>
+  <tr>
+    <td><%= secret_code.code %></td>
+    <td><%= secret_code.user.email if secret_code.user  %></td>
+    <td><%= link_to 'Show', secret_code %></td>
+
+  </tr>
+<% end %>
+
+</table>
+<%= paginate @secret_codes %>
+<br />
+<h3>Generate Secret codes</h3>
+<%= render 'form' %>
+
+<%#= link_to 'New Secret code', new_secret_code_path %>

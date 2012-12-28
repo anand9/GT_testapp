@@ -1,0 +1,13 @@
+<p>
+  <b>Code:</b>
+  <%= @secret_code.code %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @secret_code.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_secret_code_path(@secret_code) %> |
+<%= link_to 'Back', secret_codes_path %>
