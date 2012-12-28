@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
     admin = User.new(first: 'Admin', last: 'admin', email: 'admin@admin.com' , password: 'admin123' )
-    admin.is_admin = true
+    admin.admin = true
     puts "Created admin user" if admin.save
