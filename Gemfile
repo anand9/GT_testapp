@@ -11,6 +11,7 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem "cancan"
 gem 'kaminari'
+gem 'pg'
 
 
 # Gems used only for assets and not required
