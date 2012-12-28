@@ -3,7 +3,7 @@ class SecretCodesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @secret_codes = SecretCode.order("user_id DESC").page params[:page]
+    @secret_codes = SecretCode.order("user_id ASC").page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
