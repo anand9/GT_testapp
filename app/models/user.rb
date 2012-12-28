@@ -11,9 +11,9 @@ class User < ActiveRecord::Base
   attr_accessor :user_code
   has_one :user_code
   validates :email, :uniqueness => true
-  validates :user_code, :presence =>true
-  validate :check_code
-  after_create :add_code
+  validates :user_code, :presence =>true , :unless => Proc.new{|p| p.admin}
+  validate :check_code , :unless => Proc.new{|p| p.admin}
+  after_create :add_code , :unless => Proc.new{|p| p.admin}
 
 
   def check_code
